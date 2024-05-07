@@ -15,7 +15,16 @@ object ParallelizeRDD {
         println("Action: Get first " + rdd.first())
         println("Action: RDD converted to Array[Int] : ")
         rddCollect.foreach(println)
+
+        //Creating empty RDD with parallelize
+        val emptyRDD=spark.sparkContext.parallelize(Seq.empty[String])
+        emptyRDD.collect()
+        
+        //Create emptyRDD using emptyRDD
+        val emptyRDD = spark.sparkContext.emptyRDD[String]
+        emptyRDD.collect()
     }
 
 }
 ParallelizeRDD.main(Array("spark_example"))
+
