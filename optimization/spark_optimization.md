@@ -40,27 +40,20 @@ loads of data over the network and shuffling. Using the explain method we can va
 
 Spark configuration settings for optimization
 
-	1. Use columnar data while caching - When you perform Dataframe/SQL operations on columns, Spark retrieves only required columns which result in fewer data retrieval and less memory usage.
-		a. spark.conf.set("spark.sql.inMemoryColumnarStorage.compressed", true)
-	
-	2. Use optimal value for spark.sql.shuffle.partitions 
-	If you have huge data then you need to have higher number and if you have smaller dataset have it lower number.
-	
-	3. Use broadcast joins when your data can fit inmemory
-		a. This strategy can be used only when one of the joins tables small enough to fit in memory within the broadcast threshold.
-		spark.conf.set("spark.sql.autoBroadcastJoinThreshold",10485760)//100 MB by default
-		
-	4. Spark 3.0 - Enable Adaptive Query Execution
-	5.  Used kryoserializer for better optimization
-	
-	
-	
-	• Use DataFrame/Dataset over RDD
-	• Use coalesce() over repartition()
-	• Use mapPartitions() over map()
-	• Use Serialized data format’s
-	• Avoid UDF’s (User Defined Functions)
-	• Caching data in memory
-	• Reduce expensive Shuffle operations
-	• Disable DEBUG & INFO Logging
+1. Use columnar data while caching - When you perform Dataframe/SQL operations on columns, Spark retrieves only required columns which result in fewer data retrieval and less memory usage.
+	a. spark.conf.set("spark.sql.inMemoryColumnarStorage.compressed", true)
+2. Use optimal value for spark.sql.shuffle.partitions If you have huge data then you need to have higher number and if you have smaller dataset have it lower number.
+3. Use broadcast joins when your data can fit inmemory
+   -	This strategy can be used only when one of the joins tables small enough to fit in memory within the broadcast threshold.
+	spark.conf.set("spark.sql.autoBroadcastJoinThreshold",10485760)//100 MB by default
+	Spark 3.0 - Enable Adaptive Query Execution
+4. Used kryoserializer for better optimization
+5. Use DataFrame/Dataset over RDD
+6.  Use coalesce() over repartition()
+7.  Use mapPartitions() over map()
+8.  Use Serialized data format’s
+9.  Avoid UDF’s (User Defined Functions)
+10.  Caching data in memory
+11.  Reduce expensive Shuffle operations
+12.  Disable DEBUG & INFO Logging
 ![image](https://github.com/vanitha-himagirish/spark-scala-/assets/55011879/caea8005-8ebc-4157-923a-7024aab2601e)
