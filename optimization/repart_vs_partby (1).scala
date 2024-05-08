@@ -1,6 +1,6 @@
 // Databricks notebook source
-// MAGIC %md 
-// MAGIC Difference Between Repartition and Partition By
+
+// Difference Between Repartition and Partition By
 // MAGIC
 // MAGIC Repartition : 
 // MAGIC 1. Used for In-Memory partitioning
