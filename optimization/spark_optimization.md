@@ -56,4 +56,3 @@ Spark configuration settings for optimization
 10.  Caching data in memory
 11.  Reduce expensive Shuffle operations
 12.  Disable DEBUG & INFO Logging
-![image](https://github.com/vanitha-himagirish/spark-scala-/assets/55011879/caea8005-8ebc-4157-923a-7024aab2601e)
